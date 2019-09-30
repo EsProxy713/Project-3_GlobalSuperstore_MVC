@@ -1,0 +1,49 @@
+﻿@using PagedList;
+@using PagedList.Mvc;
+@model IPagedList<GlobalSuperstore_P3_27798607.Models.Returns>
+
+@{
+    ViewBag.Title = "Current Returns Data";
+}
+
+<h2>Index</h2>
+<p>If a new entry needs to be added to the Returns collection, please click below.</p>
+<p>
+<a href="@Url.Action("Create", null, new { area = string.Empty, controller = "Returns" }, Request.Url.Scheme)" class="btn btn-info btn-sm">Create New &raquo;</a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.First().Returned)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().Order_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().Region)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr style="border-bottom: 1px solid #808080;">
+            <td>
+                @Html.DisplayFor(modelItem => item.Returned)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Order_ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Region)
+            </td>
+            <td>
+                <a href="@Url.Action("Edit", null, new { area = string.Empty, controller = "Returns" }, Request.Url.Scheme)" class="btn btn-info btn-xs">Edit &raquo;</a>
+                <a href="@Url.Action("Delete", null, new { area = string.Empty, controller = "Returns" }, Request.Url.Scheme)" class="btn btn-info btn-xs">Delete &raquo;</a>
+
+            </td>
+        </tr>
+    }
+
+</table>
+@Html.PagedListPager(Model, page => Url.Action("Index", new { page }))

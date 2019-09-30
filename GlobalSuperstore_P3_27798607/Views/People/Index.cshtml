@@ -1,0 +1,43 @@
+﻿@using PagedList;
+@using PagedList.Mvc;
+@model IPagedList<GlobalSuperstore_P3_27798607.Models.People>
+
+@{
+    ViewBag.Title = "Current People Data";
+}
+
+<h2>Index</h2>
+<p>If a new entry needs to be added to the People collection, please click below.</p>
+<p>
+<a href="@Url.Action("Create", null, new { area = string.Empty, controller = "People" }, Request.Url.Scheme)" class="btn btn-info btn-sm">Create New &raquo;</a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.First().Person)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().Region)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr style="border-bottom: 1px solid #454545;">
+            <td>
+                @Html.DisplayFor(modelItem => item.Person)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Region)
+            </td>
+            <td>
+                <a href="@Url.Action("Edit", null, new { area = string.Empty, controller = "People" }, Request.Url.Scheme)" class="btn btn-info btn-xs">Edit &raquo;</a>
+                <a href="@Url.Action("Delete", null, new { area = string.Empty, controller = "People" }, Request.Url.Scheme)" class="btn btn-info btn-xs">Delete &raquo;</a>
+
+            </td>
+        </tr>
+    }
+
+</table>
+@Html.PagedListPager(Model, page => Url.Action("Index", new { page }))

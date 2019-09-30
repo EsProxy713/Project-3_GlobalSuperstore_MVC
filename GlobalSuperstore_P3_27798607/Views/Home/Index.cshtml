@@ -1,0 +1,66 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1 style="color:#00bc8c !important ">Welcome to Global Superstores</h1>
+    <p class="lead">
+        This MVC webapp provides visualisations and insights into the Global Superstore dataset.
+    </p>
+    @if (User.Identity.IsAuthenticated)
+    { }
+    else
+    {
+        <p class="lead">
+            To gain access to the data managers and data visualizations, please register/login.
+        </p>
+    }
+    <p align="center">
+        @if (User.Identity.IsAuthenticated)
+        { }
+        else
+        {
+            <a href="@Url.Action("Login", null, new { area = string.Empty, controller = "Account" }, Request.Url.Scheme)" class="btn btn-success btn-lg">Login here &raquo;</a>
+            <a href="@Url.Action("Register", null, new { area = string.Empty, controller = "Account" }, Request.Url.Scheme)" class="btn btn-success btn-lg">Register here &raquo;</a>
+        }
+    </p>
+
+</div>
+@if (User.Identity.IsAuthenticated)
+{
+    <h2 style="color:#3498db">Current tools availible:</h2>
+    <div class="row">
+
+        <div class="col-md-3">
+            <h3>Manage Orders</h3>
+            <p>BLAH BLAH BLAH</p>
+            <p><a class="btn btn-info btn-sm" href="@Url.Action("Register", null, new { area = string.Empty, controller = "Account" }, Request.Url.Scheme)">Go there &raquo;</a></p>
+        </div>
+        <div class="col-md-3">
+            <h3>Manage Returns</h3>
+            <p>BLAH BLAH BLAH</p>
+            @if (User.Identity.IsAuthenticated)
+            {
+                <p><a class="btn btn-info btn-sm" href="@Url.Action("Register", null, new { area = string.Empty, controller = "Account" }, Request.Url.Scheme)">Go there &raquo;</a></p>
+            }
+        </div>
+        <div class="col-md-3">
+            <h3>Manage People</h3>
+            <p>BLAH BLAH BLAH</p>
+            @if (User.Identity.IsAuthenticated)
+            {
+                <p><a class="btn btn-info btn-sm" href="@Url.Action("Register", null, new { area = string.Empty, controller = "Account" }, Request.Url.Scheme)">Go there &raquo;</a></p>
+            }
+        </div>
+        <div class="col-md-3">
+            <h3>Visualizations</h3>
+            <p>This show cases the data BLAH BLAH BLAH</p>
+            @if (User.Identity.IsAuthenticated)
+            {
+                <p><a class="btn btn-info btn-sm" href="@Url.Action("Register", null, new { area = string.Empty, controller = "Account" }, Request.Url.Scheme)">Go there  &raquo;</a></p>
+            }
+        </div>
+    </div>
+}
+else
+{ }
