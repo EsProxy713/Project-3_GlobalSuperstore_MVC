@@ -24,9 +24,14 @@ namespace GlobalSuperstore_P3_27798607.Controllers
         }
 
         // GET: People/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Detail(string id)
         {
-            return View();
+            Models.MongoHelper.ConnectToMongoService();
+            Models.MongoHelper.people_collection =
+            Models.MongoHelper.database.GetCollection<Models.People>("People");
+            var filter = Builders<Models.People>.Filter.Eq("_id", id);
+            var result = Models.MongoHelper.people_collection.Find(filter).FirstOrDefault();
+            return View(result);
         }
 
         // GET: People/Create
@@ -70,18 +75,30 @@ namespace GlobalSuperstore_P3_27798607.Controllers
         }
 
         // GET: People/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult Edits(string id)
         {
-            return View();
+            Models.MongoHelper.ConnectToMongoService();
+            Models.MongoHelper.people_collection =
+            Models.MongoHelper.database.GetCollection<Models.People>("People");
+            var filter = Builders<Models.People>.Filter.Eq("_id", id);
+            var result = Models.MongoHelper.people_collection.Find(filter).FirstOrDefault();
+            return View(result);
         }
 
         // POST: People/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edits(string id, FormCollection collection)
         {
             try
             {
-                // TODO: Add update logic here
+                Models.MongoHelper.ConnectToMongoService();
+                Models.MongoHelper.people_collection =
+                Models.MongoHelper.database.GetCollection<Models.People>("People");
+                var filter = Builders<Models.People>.Filter.Eq("_id", id);
+                var update = Builders<Models.People>.Update
+                    .Set("Person", collection["Person"])
+                    .Set("Region", collection["Region"]);
+                var result = Models.MongoHelper.people_collection.UpdateOneAsync(filter, update);
 
                 return RedirectToAction("Index");
             }

@@ -24,9 +24,14 @@ namespace GlobalSuperstore_P3_27798607.Controllers
         }
 
         // GET: Returns/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Details(string id)
         {
-            return View();
+            Models.MongoHelper.ConnectToMongoService();
+            Models.MongoHelper.returns_collection =
+            Models.MongoHelper.database.GetCollection<Models.Returns>("Returns");
+            var filter = Builders<Models.Returns>.Filter.Eq("_id", id);
+            var result = Models.MongoHelper.returns_collection.Find(filter).FirstOrDefault();
+            return View(result);
         }
 
         // GET: Returns/Create
