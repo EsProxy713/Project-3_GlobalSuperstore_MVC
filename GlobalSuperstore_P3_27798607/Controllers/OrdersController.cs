@@ -24,9 +24,14 @@ namespace GlobalSuperstore_P3_27798607.Controllers
         }
 
         // GET: Orders/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Details(string id)
         {
-            return View();
+            Models.MongoHelper.ConnectToMongoService();
+            Models.MongoHelper.orders_collection =
+            Models.MongoHelper.database.GetCollection<Models.Orders>("Orders");
+            var filter = Builders<Models.Orders>.Filter.Eq("_id", id);
+            var result = Models.MongoHelper.orders_collection.Find(filter).FirstOrDefault();
+            return View(result);
         }
 
         // GET: Orders/Create
@@ -92,18 +97,52 @@ namespace GlobalSuperstore_P3_27798607.Controllers
         }
 
         // GET: Orders/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult Edit(string id)
+
         {
-            return View();
+            Models.MongoHelper.ConnectToMongoService();
+            Models.MongoHelper.orders_collection =
+            Models.MongoHelper.database.GetCollection<Models.Orders>("Orders");
+            var filter = Builders<Models.Orders>.Filter.Eq("_id", id);
+            var result = Models.MongoHelper.orders_collection.Find(filter).FirstOrDefault();
+            return View(result);
         }
 
         // POST: Orders/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(string id, FormCollection collection)
         {
             try
             {
-                // TODO: Add update logic here
+                Models.MongoHelper.ConnectToMongoService();
+                Models.MongoHelper.orders_collection =
+                Models.MongoHelper.database.GetCollection<Models.Orders>("Orders");
+                var filter = Builders<Models.Orders>.Filter.Eq("_id", id);
+                var update = Builders<Models.Orders>.Update
+                    .Set("Row_ID", collection["Row_ID"])
+                    .Set("Order_ID", collection["Order_ID"])
+                    .Set("Order_Date", collection["Order_Date"])
+                    .Set("Ship_Date", collection["Ship_Date"])
+                    .Set("Ship_Mode", collection["Ship_Mode"])
+                    .Set("Customer_ID", collection["Customer_ID"])
+                    .Set("Segment", collection[""])
+                    .Set("Postal_Code", collection[""])
+                    .Set("City", collection["City"])
+                    .Set("State", collection["State"])
+                    .Set("Country", collection["Country"])
+                    .Set("Region", collection["Region"])
+                    .Set("Market", collection["Market"])
+                    .Set("Product_ID", collection["Product_ID"])
+                    .Set("Category", collection["Category"])
+                    .Set("Sub_Category", collection["Sub_Category"])
+                    .Set("Product_Name", collection["Product_Name"])
+                    .Set("Sales", collection["Sales"])
+                    .Set("Quantity", collection["Quantity"])
+                    .Set("Discount", collection["Discount"])
+                    .Set("Profit", collection["Profit"])
+                    .Set("Shipping_Cost", collection["Shipping_Cost"])
+                    .Set("Order_Priority", collection["Order_Priority"]);
+                var result = Models.MongoHelper.orders_collection.UpdateOneAsync(filter, update);
 
                 return RedirectToAction("Index");
             }

@@ -1,0 +1,202 @@
+﻿@model GlobalSuperstore_P3_27798607.Models.Orders
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Orders</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Row_ID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Row_ID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Order_ID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Order_ID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Order_Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Order_Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ship_Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ship_Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ship_Mode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ship_Mode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer_ID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Customer_ID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Segment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Segment)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Postal_Code)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Postal_Code)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.City)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.City)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.State)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.State)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Country)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Country)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Region)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Region)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Market)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Market)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Product_ID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Product_ID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Category)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Category)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sub_Category)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sub_Category)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Product_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Product_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sales)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sales)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Quantity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Quantity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Discount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Discount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Profit)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Profit)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Shipping_Cost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Shipping_Cost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Order_Priority)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Order_Priority)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
