@@ -21,19 +21,46 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    @if(User.Identity.IsAuthenticated){
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Manage Orders", "Index", "Orders")</li>
-                    <li>@Html.ActionLink("Manage Returns", "Index", "Returns")</li>
-                    <li>@Html.ActionLink("Manage People", "Index", "People")</li>
-                    }else{
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                        //Drop down menu for Manage
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown"
+                               asp-area="" asp-controller="Staffs" asp-action="Index">
+                                Manage
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>@Html.ActionLink("Manage Orders", "Index", "Orders")</li>
+                                <li>@Html.ActionLink("Manage Returns", "Index", "Returns")</li>
+                                <li>@Html.ActionLink("Manage People", "Index", "People")</li>
+                            </ul>
+                        </li>
+                        //Drop down menu for data visuals ^^ this is going to be a long one x)
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown"
+                               asp-area="" asp-controller="Staffs" asp-action="Index">
+                                Visualise
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>@Html.ActionLink("Location insights of something based on something with this and that", "Index", "Visuals")</li>
+                                <li>@Html.ActionLink("Manage Returns", "Index", "Returns")</li>
+                                <li>@Html.ActionLink("Manage People", "Index", "People")</li>
+                            </ul>
+                        </li>
+
+                    }
+                    else
+                    {
+                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     }
 
                     <!-- Original CONTENT
-                     <li>@Html.ActionLink("About", "About", "Home")</li>
-                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                     -->
+    <li>@Html.ActionLink("About", "About", "Home")</li>
+    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+    -->
 
                 </ul>
                 @Html.Partial("_LoginPartial")

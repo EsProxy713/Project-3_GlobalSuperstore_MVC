@@ -210,6 +210,7 @@
     <Compile Include="Controllers\OrdersController.cs" />
     <Compile Include="Controllers\PeopleController.cs" />
     <Compile Include="Controllers\ReturnsController.cs" />
+    <Compile Include="Controllers\VisualsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -224,6 +225,7 @@
     <Compile Include="Models\Returns.cs" />
     <Compile Include="Models\SiteSettings.cs" />
     <Compile Include="Models\ValidateGoogleCaptchaAttribute.cs" />
+    <Compile Include="Models\Visuals.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -295,6 +297,7 @@
     <Content Include="Views\People\Index.cshtml" />
     <Content Include="Views\Returns\Index.cshtml" />
     <Content Include="Views\Account\LoggedIndex.cshtml" />
+    <Content Include="Views\Visuals\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
