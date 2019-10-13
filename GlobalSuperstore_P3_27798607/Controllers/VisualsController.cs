@@ -15,9 +15,41 @@ namespace GlobalSuperstore_P3_27798607.Controllers
         }
 
         // make the actionResults for all the views and then make all the views - try categorize as much as possible to limit number of views needed to be made
+        public ActionResult LocationInsights()
+        {
+            return View();
+        }
 
+        public ActionResult Relationships()
+        {
+            return View();
+        }
 
-        // GET: Visuals/Details/5
+        public ActionResult Trends()
+        {
+            return View();
+        }
+
+        public ActionResult ProductPurchases()
+        {
+            return View();
+        }
+
+        public ActionResult RegionalManagers()
+        {
+            return View();
+        }
+
+        public ActionResult Orders()
+        {
+            return View();
+        }
+
+        public ActionResult Returns()
+        {
+            return View();
+        }
+        /*
         public ActionResult Details(int id)
         {
             return View();
@@ -87,6 +119,6 @@ namespace GlobalSuperstore_P3_27798607.Controllers
             {
                 return View();
             }
-        }
+        }*/
     }
 }

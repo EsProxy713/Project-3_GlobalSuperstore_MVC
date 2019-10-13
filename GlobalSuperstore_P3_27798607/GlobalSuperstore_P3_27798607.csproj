@@ -303,6 +303,13 @@
     <Content Include="Views\People\Edits.cshtml" />
     <Content Include="Views\People\Detail.cshtml" />
     <Content Include="Views\Returns\Details.cshtml" />
+    <Content Include="Views\Visuals\LocationInsights.cshtml" />
+    <Content Include="Views\Visuals\Relationships.cshtml" />
+    <Content Include="Views\Visuals\Trends.cshtml" />
+    <Content Include="Views\Visuals\ProductPurchases.cshtml" />
+    <Content Include="Views\Visuals\RegionalManagers.cshtml" />
+    <Content Include="Views\Visuals\Orders.cshtml" />
+    <Content Include="Views\Visuals\Returns.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
