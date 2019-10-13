@@ -45,16 +45,20 @@
             }
         </div>
         <div class="col-md-3">
-            <h3>Manage People</h3>
-            <p>BLAH BLAH BLAH</p>
+            <h3>Manage Regional Managers</h3>
+            <p>Under this option, users will be able to view and edit the current information availible from the Regional Managers dataset.</p>
+            <p></p>
             @if (User.Identity.IsAuthenticated)
             {
                 <p><a class="btn btn-info btn-sm" href="@Url.Action("Register", null, new { area = string.Empty, controller = "Account" }, Request.Url.Scheme)">Go there &raquo;</a></p>
             }
-        </div>
+            </div>
         <div class="col-md-3">
-            <h3>Visualizations</h3>
-            <p>This show cases the data BLAH BLAH BLAH</p>
+            <h3>Visualisation</h3>
+            <p>This is the visualization function of this system.</p>
+            <p>Under this option, a user can access and view different charts generated based on data in the database.</p>
+            <p>This will help to provide insight and analysis into the Global Superstore business.</p>
+            <p>Each option has a combination of charts, presented in a report unique to each sub-page</p>
             @if (User.Identity.IsAuthenticated)
             {
                 <p><a class="btn btn-info btn-sm" href="@Url.Action("Register", null, new { area = string.Empty, controller = "Account" }, Request.Url.Scheme)">Go there  &raquo;</a></p>
