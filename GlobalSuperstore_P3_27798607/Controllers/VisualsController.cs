@@ -8,6 +8,7 @@ namespace GlobalSuperstore_P3_27798607.Controllers
 {
     public class VisualsController : Controller
     {
+        
         // GET: Visuals
         public ActionResult Index()
         {

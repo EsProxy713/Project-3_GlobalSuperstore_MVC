@@ -54,15 +54,15 @@ namespace GlobalSuperstore_P3_27798607
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            app.UseFacebookAuthentication(
+               appId: "3099997110073979",
+               appSecret: "972db9b46c9b0948e84f60f393ca8737");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = "943687852869-macv5ncgf7uhad70opdu00omu37904pa.apps.googleusercontent.com",
+                ClientSecret = "8wte3b1jz5tmlOaM9qSJPJj0"
+            });
         }
     }
 }

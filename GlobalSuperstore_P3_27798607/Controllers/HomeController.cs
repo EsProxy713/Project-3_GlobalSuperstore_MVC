@@ -8,6 +8,7 @@ namespace GlobalSuperstore_P3_27798607.Controllers
 {
     public class HomeController : Controller
     {
+       // [Authorize]
         public ActionResult Index()
         {
             return View();
