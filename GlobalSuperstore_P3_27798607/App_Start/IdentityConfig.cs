@@ -33,18 +33,16 @@ namespace GlobalSuperstore_P3_27798607
     {
         public Task SendAsync(IdentityMessage message)
         {
+            
             var accountSid = WebConfigurationManager.AppSettings["SMSAccountIdentification"];
-            var accountTRY =  "ACc71cf3e74e429a09563c73d64eefcced";
-            var authTRY = "87cc2ad9d884ac3d2bd289ed35b69398";
-            var fromTRY = "+12072227390";
             var authToken = WebConfigurationManager.AppSettings["SMSAccountPassword"];
            var fromNumber = WebConfigurationManager.AppSettings["SMSAccountFrom"];
 
-            TwilioClient.Init(accountTRY, authTRY);
+            TwilioClient.Init(accountSid, authToken);
 
             MessageResource result = MessageResource.Create(
             new PhoneNumber(message.Destination),
-            from: new PhoneNumber(fromTRY),
+            from: new PhoneNumber(fromNumber),
             body: message.Body
             );
 
