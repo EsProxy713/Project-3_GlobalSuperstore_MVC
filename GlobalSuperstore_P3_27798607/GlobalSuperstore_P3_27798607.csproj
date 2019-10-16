@@ -260,6 +260,7 @@
     <Compile Include="Controllers\OrdersController.cs" />
     <Compile Include="Controllers\PeopleController.cs" />
     <Compile Include="Controllers\ReturnsController.cs" />
+    <Compile Include="Controllers\RoleController.cs" />
     <Compile Include="Controllers\VisualsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -362,6 +363,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Default\" />
+    <Folder Include="Views\Role\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

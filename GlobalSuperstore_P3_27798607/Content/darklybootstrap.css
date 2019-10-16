@@ -3411,6 +3411,9 @@ fieldset[disabled] .btn-link:focus {
   line-height: 1.5;
   border-radius: 3px;
 }
+.btn-group-wrap {
+    text-align: center;
+}
 .btn-block {
   display: block;
   width: 100%;

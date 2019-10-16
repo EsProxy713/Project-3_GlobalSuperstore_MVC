@@ -14,14 +14,14 @@ namespace GlobalSuperstore_P3_27798607.Controllers
             return View();
         }
 
-
+        [Authorize(Roles = "Admin")]
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
 
             return View();
         }
-
+        [Authorize]
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";

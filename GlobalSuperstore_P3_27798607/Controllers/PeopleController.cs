@@ -14,6 +14,7 @@ namespace GlobalSuperstore_P3_27798607.Controllers
       
         private int pageSize = 8;
         // GET: People
+        [Authorize]
         public ActionResult Index(int? page)
         {
             Models.MongoHelper.ConnectToMongoService();
@@ -25,6 +26,7 @@ namespace GlobalSuperstore_P3_27798607.Controllers
         }
 
         // GET: People/Details/5
+        [Authorize]
         public ActionResult Detail(string id)
         {
             Models.MongoHelper.ConnectToMongoService();
@@ -36,6 +38,7 @@ namespace GlobalSuperstore_P3_27798607.Controllers
         }
 
         // GET: People/Create
+        [Authorize]
         public ActionResult Create()
         {
             return View();
@@ -47,6 +50,7 @@ namespace GlobalSuperstore_P3_27798607.Controllers
             return new string(Enumerable.Repeat(strarray, v).Select(s => s[random.Next(s.Length)]).ToArray());
         }
         // POST: People/Create
+        [Authorize]
         [HttpPost]
         public ActionResult Create(FormCollection collection)
         {
@@ -76,6 +80,7 @@ namespace GlobalSuperstore_P3_27798607.Controllers
         }
 
         // GET: People/Edit/5
+        [Authorize]
         public ActionResult Edits(string id)
         {
             Models.MongoHelper.ConnectToMongoService();
@@ -88,6 +93,7 @@ namespace GlobalSuperstore_P3_27798607.Controllers
 
         // POST: People/Edit/5
         [HttpPost]
+        [Authorize]
         public ActionResult Edits(string id, FormCollection collection)
         {
             try

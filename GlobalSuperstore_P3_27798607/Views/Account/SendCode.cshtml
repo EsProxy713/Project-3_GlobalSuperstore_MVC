@@ -1,6 +1,6 @@
 ﻿@model GlobalSuperstore_P3_27798607.Models.SendCodeViewModel
 @{
-    ViewBag.Title = "Send";
+    ViewBag.Title = "Verify your login";
 }
 
 <h2>@ViewBag.Title.</h2>
@@ -13,8 +13,10 @@
     <div class="row">
         <div class="col-md-8">
             Select Two-Factor Authentication Provider:
-            @Html.DropDownListFor(model => model.SelectedProvider, Model.Providers)
-            <input type="submit" value="Submit" class="btn btn-default" />
+            <br />
+            <br />
+            @Html.DropDownListFor(model => model.SelectedProvider, Model.Providers, new { @class = "btn btn-default dropdown-toggle" })
+            <input type="submit" value="Submit" class="btn btn-success" />
         </div>
     </div>
 }

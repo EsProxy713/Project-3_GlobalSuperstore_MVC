@@ -3,8 +3,7 @@
 @{
     ViewBag.Title = "Edit";
 }
-@if (User.Identity.IsAuthenticated)
-{
+
     <h2>Edit</h2>
 
     @using (Html.BeginForm())
@@ -211,16 +210,4 @@
         @Html.ActionLink("Back to List", "Index")
     </div>
 
-}
-else
-{
-    <div class="jumbotron">
-        <h2>Please login to view this page.</h2>
 
-        <p align="center">
-            <a href="@Url.Action("Login", null, new { area = string.Empty, controller = "Account" }, Request.Url.Scheme)" class="btn btn-success btn-lg">Login here &raquo;</a>
-            <a href="@Url.Action("Register", null, new { area = string.Empty, controller = "Account" }, Request.Url.Scheme)" class="btn btn-success btn-lg">Register here &raquo;</a>
-        </p>
-    </div>
-
-}

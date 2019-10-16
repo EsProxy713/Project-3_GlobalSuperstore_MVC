@@ -28,60 +28,81 @@
 </div>
 @if (User.Identity.IsAuthenticated)
 {
-<h2 style="color:#3498db">Current tools available:</h2>
-<div class="row">
-    <div class="col-md-3">
-        <h3>Visualisation</h3>
-        <p>This is the visualization function of this system.</p>
-        <p>Under this option, a user can access and view different charts generated based on data in the database.</p>
-        <p>This will help to provide insight and analysis into the Global Superstore business.</p>
-        <p>Each option has a combination of charts unique to that section of analysis.</p>
-
-        <li class="dropdown" >
-            <a class="dropdown-toggle" data-toggle="dropdown"
-               asp-area="" asp-controller="Staffs" asp-action="Index" style="color:#3498db">
-                Visualisation
-                <span class="caret"></span>
-            </a>
-            <ul class="dropdown-menu">
-                <li>@Html.ActionLink("Trends over time", "Trends", "Visuals")</li>
-                <li>@Html.ActionLink("Relationships between area and purchases", "Relationships", "Visuals")</li>
-                <li>@Html.ActionLink("Location Insights", "LocationInsights", "Visuals")</li>
-                <li>@Html.ActionLink("Products Purchased History", "ProductPurchases", "Visuals")</li>
-                <li>@Html.ActionLink("Information on Regional Managers", "RegionalManagers", "Visuals")</li>
-                <li>@Html.ActionLink("Information on Order History", "Orders", "Visuals")</li>
-                <li>@Html.ActionLink("Information on Return History", "Returns", "Visuals")</li>
-            </ul>
-        </li>
-
-    </div>
-    <div class="col-md-3">
-        <h3>Manage Orders</h3>
-        <p>Row Level Access:</p>
-        <p>• Under this option, users will be able to view and edit the current information available from the Orders dataset.</p>
-        <p>• There is also capability to add new entries into the Orders dataset.</p>
-        <p><a class="btn btn-info btn-sm" href="@Url.Action("Index", null, new { area = string.Empty, controller = "Orders" }, Request.Url.Scheme)">Go there &raquo;</a></p>
-    </div>
-    <div class="col-md-3">
-        <h3>Manage Returns</h3>
-        <p>Row Level Access:</p>
-        <p>• Under this option, users will be able to view the current information available from the Returns dataset.</p>
-        <p>• There is also capability to add new entries into the Returns dataset.</p>
-        
-            <p><a class="btn btn-info btn-sm" href="@Url.Action("Index", null, new { area = string.Empty, controller = "Returns" }, Request.Url.Scheme)">Go there &raquo;</a></p>
-        
-    </div>
-    <div class="col-md-3">
-        <h3>Manage Regional Managers</h3>
-        <p>Row Level Access:</p>
-        <p>• Under this option, users will be able to view and edit the current information available from the Regional Managers dataset.</p>
-        <p>• There is also capability to add new entries into the Regional Managers dataset.</p>
-        
-            <p><a class="btn btn-info btn-sm" href="@Url.Action("Index", null, new { area = string.Empty, controller = "People" }, Request.Url.Scheme)">Go there &raquo;</a></p>
-        
+<h2>Current tools available:</h2>
+<br />
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <h3 class="panel-title">Visualisation</h3>
+        </div>
+        <div class="panel-body">
+            This is the visualization function of this system.
+            Under this option, a user can access and view different charts generated based on data in the database.
+            This will help to provide insight and analysis into the Global Superstore business.
+            Each option has a combination of charts unique to that section of analysis.
+            <p></p>
+            <div class="btn-group">
+                <div class="btn-group" >
+                    <a href="#" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                        Visualisations <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>@Html.ActionLink("Trends over time", "Trends", "Visuals")</li>
+                        <li class="divider"></li>
+                        <li>@Html.ActionLink("Relationships between area and purchases", "Relationships", "Visuals")</li>
+                        <li class="divider"></li>
+                        <li>@Html.ActionLink("Location Insights", "LocationInsights", "Visuals")</li>
+                        <li class="divider"></li>
+                        <li>@Html.ActionLink("Products Purchased History", "ProductPurchases", "Visuals")</li>
+                        <li class="divider"></li>
+                        <li>@Html.ActionLink("Information on Regional Managers", "RegionalManagers", "Visuals")</li>
+                        <li class="divider"></li>
+                        <li>@Html.ActionLink("Information on Order History", "Orders", "Visuals")</li>
+                        <li class="divider"></li>
+                        <li>@Html.ActionLink("Information on Return History", "Returns", "Visuals")</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
 
-</div>
-}
-else
-{ }
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <h3 class="panel-title">Manage Orders</h3>
+        </div>
+        <div class="panel-body">
+            This is the row-level access of the Orders collection.
+            Under this option, users will be able to view and edit the current information available from the Orders dataset.
+            There is also capability to add new entries into the Orders dataset.
+            <p></p>
+            <p><a class="btn btn-success" href="@Url.Action("Index", null, new { area = string.Empty, controller = "Orders" }, Request.Url.Scheme)">Go there &raquo;</a></p>
+        </div>
+    </div>
+
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <h3 class="panel-title">Manage Returns</h3>
+        </div>
+        <div class="panel-body">
+            This is the row-level access of the Returns collection.
+            Under this option, users will be able to view the current information available from the Returns dataset.
+            There is also capability to add new entries into the Returns dataset.
+            <p></p>
+            <p><a class="btn btn-success" href="@Url.Action("Index", null, new { area = string.Empty, controller = "Returns" }, Request.Url.Scheme)">Go there &raquo;</a></p>
+        </div>
+    </div>
+
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <h3 class="panel-title">Manage Regional Managers</h3>
+        </div>
+        <div class="panel-body">
+            This is the row-level access of the Regional Managers collection.
+            Under this option, users will be able to view and edit the current information available from the Regional Managers dataset.
+            There is also capability to add new entries into the Regional Managers dataset.
+            <p></p>
+            <p><a class="btn btn-success" href="@Url.Action("Index", null, new { area = string.Empty, controller = "People" }, Request.Url.Scheme)">Go there &raquo;</a></p>
+        </div>
+    </div>
+    }
+    else
+    { }

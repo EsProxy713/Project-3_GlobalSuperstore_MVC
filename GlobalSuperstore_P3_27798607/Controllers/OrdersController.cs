@@ -13,6 +13,7 @@ namespace GlobalSuperstore_P3_27798607.Controllers
     {
         private int pageSize = 5;
         // GET: Orders
+        [Authorize]
         public ActionResult Index(int? page)
         {
             Models.MongoHelper.ConnectToMongoService();

@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - Global Superstore 2016</title>
+    <title>@ViewBag.Title - Global Superstore</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
@@ -17,7 +17,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Global Superstore 2016", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Global Superstore", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
@@ -33,24 +33,30 @@
                             </a>
                             <ul class="dropdown-menu">
                                 <li>@Html.ActionLink("Orders", "Index", "Orders")</li>
+                                <li class="divider"></li>
                                 <li>@Html.ActionLink("Returns", "Index", "Returns")</li>
+                                <li class="divider"></li>
                                 <li>@Html.ActionLink("Regional Managers", "Index", "People")</li>
                             </ul>
                         </li>
                         //Drop down menu for data visuals ^^ this is going to be a long one x)
                         <li class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown"
-                               asp-area="" asp-controller="Staffs" asp-action="Index">
-                                Visualisation
-                                <span class="caret"></span>
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
+                                Visualisations <span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu">
                                 <li>@Html.ActionLink("Trends over time", "Trends", "Visuals")</li>
+                                <li class="divider"></li>
                                 <li>@Html.ActionLink("Relationships between area and purchases", "Relationships", "Visuals")</li>
+                                <li class="divider"></li>
                                 <li>@Html.ActionLink("Location Insights", "LocationInsights", "Visuals")</li>
+                                <li class="divider"></li>
                                 <li>@Html.ActionLink("Products Purchased History", "ProductPurchases", "Visuals")</li>
+                                <li class="divider"></li>
                                 <li>@Html.ActionLink("Information on Regional Managers", "RegionalManagers", "Visuals")</li>
+                                <li class="divider"></li>
                                 <li>@Html.ActionLink("Information on Order History", "Orders", "Visuals")</li>
+                                <li class="divider"></li>
                                 <li>@Html.ActionLink("Information on Return History", "Returns", "Visuals")</li>
                             </ul>
                         </li>
@@ -62,9 +68,9 @@
                     }
 
                     <!-- Original CONTENT
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                     -->
+    <li>@Html.ActionLink("About", "About", "Home")</li>
+    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+     -->
 
                 </ul>
                 @Html.Partial("_LoginPartial")

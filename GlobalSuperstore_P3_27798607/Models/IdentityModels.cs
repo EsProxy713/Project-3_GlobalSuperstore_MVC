@@ -30,4 +30,6 @@ namespace GlobalSuperstore_P3_27798607.Models
             return new ApplicationDbContext();
         }
     }
+
+
 }
