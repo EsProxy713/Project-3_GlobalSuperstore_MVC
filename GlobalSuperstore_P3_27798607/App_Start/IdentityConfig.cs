@@ -11,6 +11,12 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using GlobalSuperstore_P3_27798607.Models;
+using System.Configuration;
+using Twilio;
+using Twilio.Rest.Api.V2010.Account;
+using Twilio.Types;
+using System.Diagnostics;
+using System.Web.Configuration;
 
 namespace GlobalSuperstore_P3_27798607
 {
@@ -27,8 +33,26 @@ namespace GlobalSuperstore_P3_27798607
     {
         public Task SendAsync(IdentityMessage message)
         {
-            // Plug in your SMS service here to send a text message.
-            return Task.FromResult(0);
+            var accountSid = WebConfigurationManager.AppSettings["SMSAccountIdentification"];
+            var accountTRY =  "ACc71cf3e74e429a09563c73d64eefcced";
+            var authTRY = "87cc2ad9d884ac3d2bd289ed35b69398";
+            var fromTRY = "+12072227390";
+            var authToken = WebConfigurationManager.AppSettings["SMSAccountPassword"];
+           var fromNumber = WebConfigurationManager.AppSettings["SMSAccountFrom"];
+
+            TwilioClient.Init(accountTRY, authTRY);
+
+            MessageResource result = MessageResource.Create(
+            new PhoneNumber(message.Destination),
+            from: new PhoneNumber(fromTRY),
+            body: message.Body
+            );
+
+            ////Status is one of Queued, Sending, Sent, Failed or null if the number is not valid
+            Trace.TraceInformation(result.Status.ToString());
+            ////Twilio doesn't currently have an async API, so return success.
+            return Task.FromResult(0);    
+
         }
     }
 
